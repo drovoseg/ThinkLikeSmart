@@ -1,0 +1,25 @@
+#Autosave files
+*~
+
+# Build/test output
+[Oo]bj/
+[Bb]in/
+Backup/
+gen/
+
+_UpgradeReport_Files/
+
+*.bak
+*.user
+*.suo
+*.cd
+*.TMP
+*.iml
+
+/UpgradeLog.XML
+/.idea/
+Thumbs.db
+local.properties
+/ThinkLikeSmart/ThinkLikeSmart.Droid/Assets/AboutAssets.txt
+/ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/AboutResources.txt
+/ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/Resource.designer.cs
