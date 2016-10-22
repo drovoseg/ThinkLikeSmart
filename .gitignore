@@ -24,3 +24,4 @@ local.properties
 /ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/AboutResources.txt
 /ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/Resource.designer.cs
 .vs
+/packages
