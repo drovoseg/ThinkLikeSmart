@@ -11,7 +11,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.main);
         }
     }
 }
