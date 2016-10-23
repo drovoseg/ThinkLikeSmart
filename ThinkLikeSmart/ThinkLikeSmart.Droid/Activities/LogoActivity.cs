@@ -6,7 +6,7 @@ using Tls.ThinkLikeSmart.Droid.Activities;
 
 namespace Tls.ThinkLikeSmart.Droid.Activties
 {
-    [Activity (Theme = "@style/ThinkLikeSmart.SplashScreen", MainLauncher = true, NoHistory = true, Icon = "@drawable/icon")]
+    [Activity(Theme = "@style/ThinkLikeSmart.SplashScreen", MainLauncher = true, NoHistory = true)]
 	public class LogoActivity : Activity
     {
 		protected override void OnCreate (Bundle bundle)
