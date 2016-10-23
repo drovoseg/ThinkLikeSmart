@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace Tls.ThinkLikeSmart.Droid.Activities
 {
-    [Activity(Label = "MainActivity")]
+    [Activity]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
