@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">비밀번호</string>
+    <string name="login">로그인</string>
+    <string name="anonymous_login">익명 로그인</string>
+    <string name="account">계정</string>
+    <string name="china">중국</string>
+    <string name="email_login">E-mail/ID</string>
+    <string name="phone_login">모바일 인증</string>
+    <string name="login_title">로그인</string>
+    <string name="register">등록</string>
+    <string name="forget_pwd">비밀번호를 잊어셨나요?</string>
+</resources>

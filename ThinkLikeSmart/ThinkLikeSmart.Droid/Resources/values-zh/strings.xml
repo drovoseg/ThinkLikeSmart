@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">密碼</string>
+    <string name="login">登錄</string>
+    <string name="anonymous_login">匿名登陸</string>
+    <string name="account">賬號</string>
+    <string name="china">中國</string>
+    <string name="email_login">郵箱/ID登錄</string>
+    <string name="phone_login">手機號碼登錄</string>
+    <string name="login_title">登錄</string>
+    <string name="register">新用戶註冊</string>
+    <string name="forget_pwd">忘記密碼?</string>
+</resources>

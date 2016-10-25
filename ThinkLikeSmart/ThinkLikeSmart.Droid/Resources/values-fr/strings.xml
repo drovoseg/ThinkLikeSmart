@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">mot de passe</string>
+    <string name="login">enregistrer…</string>
+    <string name="anonymous_login">inscription anonyme </string>
+    <string name="account">compte </string>
+    <string name="china">Chine</string>
+    <string name="email_login">via  e-mail/ID</string>
+    <string name="phone_login">via téléphone mobile </string>
+    <string name="login_title">enregistrer </string>
+    <string name="register">inscrire </string>
+    <string name="forget_pwd">mot de passe oublié?</string>
+</resources>

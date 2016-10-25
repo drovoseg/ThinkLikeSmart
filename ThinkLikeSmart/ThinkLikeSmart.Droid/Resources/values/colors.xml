@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_gray">#E0E0E0</color>
+    <color name="dialog_back_color">#90000000</color>
+    <color name="text_color_black">#444242</color>
+    <color name="text_color_blue">#52a0e0</color>
+    <color name="dialog_title">#52a0e0</color>
+    <color name="text_color">#123456</color>
+</resources>

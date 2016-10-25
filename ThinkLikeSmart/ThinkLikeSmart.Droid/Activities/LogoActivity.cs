@@ -23,7 +23,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activties
             });
 
             startupWork.ContinueWith(t => {
-                StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+                StartActivity(new Intent(Application.Context, typeof(LoginActivity)));
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
             startupWork.Start();

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">clave</string>
+    <string name="login">login</string>
+    <string name="anonymous_login">anónimo login</string>
+    <string name="account">cuenta</string>
+    <string name="email_login">con Email/ID</string>
+    <string name="phone_login">con móvil</string>
+    <string name="login_title">login</string>
+    <string name="register">registrar</string>
+    <string name="forget_pwd">olvidar tu clave</string>
+</resources>

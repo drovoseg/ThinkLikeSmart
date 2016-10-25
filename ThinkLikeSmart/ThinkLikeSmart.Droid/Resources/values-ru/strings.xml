@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="anonymous_login">Анонимный вход</string>
+    <string name="account">Учетная запись</string>
+    <string name="china">Китай</string>
+    <string name="email_login">Через Email/ID</string>
+    <string name="phone_login">Через телефон</string>
+    <string name="login_title">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="forget_pwd">Забыли пароль?</string>
+</resources>
