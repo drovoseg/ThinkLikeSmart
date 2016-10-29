@@ -136,7 +136,22 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <InterfaceDefinition Include="ViewControllers\Authentication\Login.storyboard" />
+    <InterfaceDefinition Include="Resources\Base.lproj\LoginStoryboard.storyboard" />
+    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ko.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ru.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\en.lproj\LoginStoryboard~iphone.strings" />
+    <BundleResource Include="Resources\ko.lproj\LoginStoryboard~iphone.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\LoginStoryboard~iphone.strings" />
+    <BundleResource Include="Resources\ru.lproj\LoginStoryboard~iphone.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\LoginStoryboard~iphone.strings" />
+    <BundleResource Include="Resources\en.lproj\LoginStoryboard~ipad.strings" />
+    <BundleResource Include="Resources\ko.lproj\LoginStoryboard~ipad.strings" />
+    <BundleResource Include="Resources\ru.lproj\LoginStoryboard~ipad.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\LoginStoryboard~ipad.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\LoginStoryboard~ipad.strings" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -146,5 +161,10 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

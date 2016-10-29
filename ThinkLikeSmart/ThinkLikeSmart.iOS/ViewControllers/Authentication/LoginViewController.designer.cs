@@ -14,16 +14,16 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
     [Register ("LoginViewController")]
     partial class LoginViewController
     {
-        [Action ("UIButton20_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton20_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("UIButton21_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton21_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UINavigationBar Title { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (Title != null) {
+                Title.Dispose ();
+                Title = null;
+            }
         }
     }
 }

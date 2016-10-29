@@ -42,5 +42,14 @@
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Login</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ru</string>
+		<string>ko</string>
+		<string>zh</string>
+		<string>zh-CN</string>
+	</array>
 </dict>
 </plist>
