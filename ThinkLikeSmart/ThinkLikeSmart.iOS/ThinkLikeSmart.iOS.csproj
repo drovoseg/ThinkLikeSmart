@@ -57,9 +57,8 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignKey>iPhone Developer: Dmitriy Vasilev (8X8KYE8VCV)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>b5658373-a96b-4f90-8162-e0f213b161cf</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
