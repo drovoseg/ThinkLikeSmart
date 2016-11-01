@@ -140,7 +140,15 @@
                             </button>
                         </subviews>
                     </view>
-                    <connections/>
+                    <connections>
+                        <outlet property="loginButton" destination="21" id="name-outlet-21"/>
+                        <outlet property="rememberPasswordButton" destination="146" id="name-outlet-146"/>
+                        <outlet property="registrationButton" destination="120" id="name-outlet-120"/>
+                        <outlet property="forgetPasswordButton" destination="20" id="name-outlet-20"/>
+                        <outlet property="loginTextField" destination="17" id="name-outlet-17"/>
+                        <outlet property="loginMethodSeparator" destination="12" id="name-outlet-12"/>
+                        <outlet property="passwordTextField" destination="18" id="name-outlet-18"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
