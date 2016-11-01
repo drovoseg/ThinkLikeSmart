@@ -57,9 +57,9 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignKey>iPhone Distribution: Playtika LTD (N8J7QV28X4)</CodesignKey>
+    <CodesignKey>iPhone Developer: Dmitriy Vasilev (8X8KYE8VCV)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>1c52c353-5d6c-43f7-8431-b56651ec34a4</CodesignProvision>
+    <CodesignProvision>b5658373-a96b-4f90-8162-e0f213b161cf</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
