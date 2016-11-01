@@ -1,13 +1,11 @@
 
 using System;
-using System.Drawing;
-
-using Foundation;
+using Tls.ThinkLikeSmart.Common.Interfaces.Views.Authentication;
 using UIKit;
 
 namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 {
-    public partial class LoginViewController : UIViewController
+    public partial class LoginViewController : UIViewController, ILoginView
     {
         public LoginViewController(IntPtr handle) : base(handle)
         {

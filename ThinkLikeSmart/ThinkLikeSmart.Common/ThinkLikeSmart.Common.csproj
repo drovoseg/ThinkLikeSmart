@@ -31,7 +31,11 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Views\Authentication\ILoginView.cs" />
+    <Compile Include="Interfaces\Views\ISystemView.cs" />
+    <Compile Include="Logic\Presenters\Authentication\LoginPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
