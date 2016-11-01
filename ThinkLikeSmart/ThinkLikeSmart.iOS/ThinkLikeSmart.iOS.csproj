@@ -83,6 +83,15 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60@3x.png">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76@2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40.png">
+      <InProject>false</InProject>
+    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40@2x.png">
       <InProject>false</InProject>
     </ImageAsset>
@@ -144,6 +153,12 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default@2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tab-bg.imageset\bg_tab_item.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tab-bg.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
