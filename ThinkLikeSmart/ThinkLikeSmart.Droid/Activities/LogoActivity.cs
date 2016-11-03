@@ -2,7 +2,7 @@
 using Android.OS;
 using System.Threading.Tasks;
 using Android.Content;
-using Tls.ThinkLikeSmart.Droid.Activities;
+using Tls.ThinkLikeSmart.Droid.Activities.Authentication;
 
 namespace Tls.ThinkLikeSmart.Droid.Activties
 {
