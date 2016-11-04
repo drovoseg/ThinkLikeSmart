@@ -118,9 +118,6 @@
     <ImageAsset Include="Resources\Images.xcassets\button-background.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\ButtonBackgroundPressed.imageset\bg_button_p.pdf">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\icon-lock-closed.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -188,6 +185,7 @@
     <BundleResource Include="Resources\zh-Hant.lproj\LoginStoryboard~ipad.strings" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Storage\IosSettings.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewControllers\Authentication\LoginViewController.cs" />

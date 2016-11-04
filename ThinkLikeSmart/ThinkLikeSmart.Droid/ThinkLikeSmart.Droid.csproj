@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Activities\LogoActivity.cs" />
     <Compile Include="Activities\Authentication\LoginActivity.cs" />
+    <Compile Include="Storage\AndroidSettings.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

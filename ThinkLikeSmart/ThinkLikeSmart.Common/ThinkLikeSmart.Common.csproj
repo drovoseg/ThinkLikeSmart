@@ -31,9 +31,12 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Views\Authentication\ILoginView.cs" />
-    <Compile Include="Interfaces\Views\ISystemView.cs" />
-    <Compile Include="Logic\Presenters\Authentication\LoginPresenter.cs" />
+    <Compile Include="Presenters\Authentication\LoginType.cs" />
+    <Compile Include="Storage\ISettings.cs" />
+    <Compile Include="Views\Authentication\ILoginView.cs" />
+    <Compile Include="Views\ISystemView.cs" />
+    <Compile Include="Presenters\Authentication\LoginPresenter.cs" />
+    <Compile Include="Presenters\BasePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

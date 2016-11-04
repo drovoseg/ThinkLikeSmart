@@ -5,7 +5,8 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Widget;
-using Tls.ThinkLikeSmart.Common.Interfaces.Views.Authentication;
+using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
+using Tls.ThinkLikeSmart.Common.Views.Authentication;
 
 namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 {
@@ -26,6 +27,8 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         private RadioGroup loginTypeRadioGroup;
         private TextView forgetPasswordTextView;
 
+        private readonly LoginPresenter presenter;
+
         //    public static Context mContext;
         //    private boolean isRegFilter = false;
         //    public static final int ANIMATION_END = 2;
@@ -38,6 +41,24 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         //    NormalDialog dialog_enter_ap;
         //    boolean isExitAp;
 
+        public VisibliltyMode CountriesContainerVisiblity { get; set; }
+
+        public void TogglePhoneLoginType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ToggleEmailLoginType()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public LoginActivity()
+        {
+            presenter = new LoginPresenter(this, null); //TODO: add andriond settings here
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -47,21 +68,9 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
     //        mContext = this;
     //        isExitAp = getIntent().getBooleanExtra("isExitAp", false);
             InitComponents();
-    //        if (SharedPreferencesManager.getInstance().getRecentLoginType(mContext) == Constants.LoginType.PHONE)
-    //        {
-    //            current_type = Constants.LoginType.PHONE;
-    //            choose_country.setVisibility(RelativeLayout.VISIBLE);
-    //            type_phone.setChecked(true);
-    //        }
-    //        else
-    //        {
-    //            choose_country.setVisibility(RelativeLayout.GONE);
-    //            current_type = Constants.LoginType.EMAIL;
-    //            type_email.setChecked(true);
-    //        }
-    //        regFilter();
-    //        initRememberPass();
-    //    }
+
+            presenter.ViewCreated();
+
         }
 
         public void InitComponents()
@@ -69,7 +78,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             loginButton = (Button)FindViewById(Resource.Id.login);
 
             registerButton = (Button)FindViewById(Resource.Id.register);
-
+            
             loginEditText = (EditText)FindViewById(Resource.Id.phone_number);
             passwordEditText = (EditText)FindViewById(Resource.Id.password);
             rememberDialogLayout = (RelativeLayout)FindViewById(Resource.Id.dialog_remember);
@@ -91,7 +100,6 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             registerButton.Click += OnRegisterButtonClick;
             rememberPasswordlayout.Click += OnRememberPasswordlayoutClick;
             //tv_Anonymous_login.setOnClickListener(this);
-
             //isApEnter = SharedPreferencesManager.getInstance().getIsApEnter(
             //        mContext);
             //if (isApEnter)
