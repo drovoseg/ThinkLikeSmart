@@ -9,5 +9,5 @@
     <string name="phone_login">手机号码登录</string>
     <string name="login_title">登录</string>
     <string name="register">新用户注册</string>
-    <string name="forget_pwd">忘记密码?</string>
+    <string name="forget_pwd"><u>忘记密码?</u></string>
 </resources>

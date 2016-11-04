@@ -11,6 +11,6 @@
     <string name="phone_login">By Mobile</string>
     <string name="login_title">Login</string>
     <string name="register">register</string>
-    <string name="forget_pwd">Forget your password?</string>
+    <string name="forget_pwd"><u>Forget your password?</u></string>
     <string name="china_number_code" tools:ignore="MissingTranslation">+86</string>
 </resources>

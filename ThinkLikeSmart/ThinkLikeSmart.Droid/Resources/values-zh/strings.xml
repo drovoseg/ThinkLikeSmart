@@ -9,5 +9,5 @@
     <string name="phone_login">手機號碼登錄</string>
     <string name="login_title">登錄</string>
     <string name="register">新用戶註冊</string>
-    <string name="forget_pwd">忘記密碼?</string>
+    <string name="forget_pwd"><u>忘記密碼?</u></string>
 </resources>
