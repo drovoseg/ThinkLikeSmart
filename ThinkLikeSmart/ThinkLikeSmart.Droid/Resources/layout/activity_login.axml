@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_gray"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/layout_title"
         android:layout_width="match_parent"
@@ -33,6 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <RadioButton
+                android:id="@+id/type_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
@@ -46,6 +46,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <RadioButton
+                android:id="@+id/type_email"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
@@ -92,6 +93,7 @@
                 android:contentDescription="separator"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@+id/separator"
@@ -128,6 +130,7 @@
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/text_size_normal" />
                 <EditText
+                    android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp"
@@ -152,6 +155,7 @@
                 android:background="#ccc"
                 tools:ignore="ContentDescription" />
             <RelativeLayout
+                android:id="@+id/layout_password"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height">
                 <TextView
@@ -166,6 +170,7 @@
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/text_size_normal" />
                 <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp"
@@ -184,12 +189,14 @@
                     android:textSize="@dimen/text_size_edit"
                     tools:ignore="RtlHardcoded" />
                 <RelativeLayout
+                    android:id="@+id/remember_pass"
                     android:layout_width="@dimen/edit_icon_button_width"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
                     <ImageView
+                        android:id="@+id/remember_pwd_img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
@@ -245,6 +252,7 @@
             android:textSize="@dimen/text_size_normal"
             android:visibility="gone" />
         <TextView
+            android:id="@+id/forget_pwd"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/login_register_btn_height"
             android:layout_alignParentRight="true"
@@ -256,9 +264,11 @@
             android:gravity="center"
             android:text="@string/forget_pwd"
             android:textColor="@color/text_color_black"
-            android:textSize="@dimen/text_size_normal" />
+            android:textSize="@dimen/text_size_normal"
+            />
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/dialog_remember"
         android:layout_width="@dimen/login_dialog_remember_width"
         android:layout_height="@dimen/login_dialog_remember_height"
         android:layout_centerInParent="true"
@@ -275,6 +285,7 @@
             android:contentDescription="dialog_img"
             tools:ignore="HardcodedText" />
         <TextView
+            android:id="@+id/dialog_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dialog_img"
