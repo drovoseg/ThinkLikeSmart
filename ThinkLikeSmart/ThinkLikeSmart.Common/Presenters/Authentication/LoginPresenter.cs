@@ -1,5 +1,6 @@
 ﻿using System;
 using Tls.ThinkLikeSmart.Common.Storage;
+using Tls.ThinkLikeSmart.Common.Views;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 
 namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
@@ -42,10 +43,4 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
         }
     }
 
-    public enum VisibliltyMode
-    {
-        Visible,
-        Invisible,
-        Gone
-    }
 }

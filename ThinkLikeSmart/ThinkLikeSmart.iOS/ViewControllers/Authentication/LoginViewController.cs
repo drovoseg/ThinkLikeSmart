@@ -1,6 +1,7 @@
 ﻿
 using System;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
+using Tls.ThinkLikeSmart.Common.Views;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 using UIKit;
 

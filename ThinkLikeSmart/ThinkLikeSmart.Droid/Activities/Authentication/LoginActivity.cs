@@ -1,12 +1,11 @@
 
 using System;
 using Android.App;
-using Android.Content;
-using Android.Graphics;
 using Android.OS;
 using Android.Widget;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
+using Tls.ThinkLikeSmart.Common.Views;
 
 namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 {
