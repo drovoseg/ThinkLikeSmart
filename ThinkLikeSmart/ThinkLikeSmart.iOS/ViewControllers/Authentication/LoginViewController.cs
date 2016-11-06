@@ -1,28 +1,29 @@
 ﻿
 using System;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
-using Tls.ThinkLikeSmart.Common.Views;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
+using Tls.ThinkLikeSmart.iOS.Storage;
 using UIKit;
 
 namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 {
     public partial class LoginViewController : UIViewController, ILoginView
     {
-        public VisibliltyMode CountriesContainerVisiblity { get; set; }
-        public void TogglePhoneLoginType()
-        {
-            throw new NotImplementedException();
-        }
+        private const int PhoneSegment = 1;
+        private const int EmailSegment = 0;
 
-        public void ToggleEmailLoginType()
-        {
-            throw new NotImplementedException();
-        }
+        private LoginPresenter presenter;
+        
 
+        public bool IsCountryContainerVisible
+        {
+            get { return !countyControlsContainerView.Hidden; }
+            set { countyControlsContainerView.Hidden = !value; }
+        }
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
+            presenter = new LoginPresenter(this, new IosSettings());
         }
 
         #region View lifecycle
@@ -30,8 +31,10 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+
+            loginMethodSegmentedControl.ValueChanged += OnLoginMethodSegmentedControlValueChanged;
             // Perform any additional setup after loading the view, typically from a nib.
+            presenter.ViewCreated();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -63,10 +66,49 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             // Release any cached data, images, etc that aren't in use.
         }
 
+        #endregion
+
+        #region GUI event handlers
+        //#pragma mark - 选择登录界面：邮箱登录和手机号登录
+        //-(void)onLoginTypeChange:(UISegmentedControl*)control{
+
+        //    self.loginType = control.selectedSegmentIndex;
+
+        //    if(self.loginType==0){
+        //        [self.usernameField2 resignFirstResponder];
+        //        [self.passwrodField2 resignFirstResponder];
+        //    }else{
+        //        [self.usernameField1 resignFirstResponder];
+        //        [self.passwrodField1 resignFirstResponder];
+        //    }
+        //}
+
+        private void OnLoginMethodSegmentedControlValueChanged(object sender, EventArgs e)
+        {
+            UISegmentedControl loginMethodSegmentedControl = (UISegmentedControl)sender;
+
+            if (loginMethodSegmentedControl.SelectedSegment == EmailSegment)
+            {
+                presenter.HandleEmailRadioButtonClick();
+            }
+            else presenter.HandlePhoneRadioButtonClick();
+        }
 
         #endregion
 
+        #region ILoginView mehtod implementations
 
+        public void TogglePhoneLoginType()
+        {
+            loginMethodSegmentedControl.SelectedSegment = PhoneSegment;
+        }
+
+        public void ToggleEmailLoginType()
+        {
+            loginMethodSegmentedControl.SelectedSegment = EmailSegment;
+        }
+
+        #endregion
 
         //# import "LoginController.h"
         //# import "Constants.h"
@@ -776,23 +818,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         //    [chooseCountryController release];
         //}
 
-        //#pragma mark - 选择登录界面：邮箱登录和手机号登录
-        //-(void)onLoginTypeChange:(UISegmentedControl*)control{
-
-        //    self.loginType = control.selectedSegmentIndex;
-
-        //    if(self.loginType==0){
-        //        [self.mainView1 setHidden:NO];
-        //        [self.mainView2 setHidden:YES];
-        //        [self.usernameField2 resignFirstResponder];
-        //        [self.passwrodField2 resignFirstResponder];
-        //    }else{
-        //        [self.mainView1 setHidden:YES];
-        //        [self.mainView2 setHidden:NO];
-        //        [self.usernameField1 resignFirstResponder];
-        //        [self.passwrodField1 resignFirstResponder];
-        //    }
-        //}
 
         //#pragma mark - 进入手机号码注册界面
         //-(void)onPhoneRegisterPress{

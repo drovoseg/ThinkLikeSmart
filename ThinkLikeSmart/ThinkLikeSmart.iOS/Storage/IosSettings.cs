@@ -6,5 +6,10 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
     class IosSettings : ISettings
     {
         public LoginType RecentLoginType { get; set; }
+
+        public IosSettings()
+        {
+            RecentLoginType = LoginType.Phone;
+        }
     }
 }
