@@ -6,5 +6,10 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
     class AndroidSettings : ISettings
     {
         public LoginType RecentLoginType { get; set; }
+
+        public AndroidSettings()
+        {
+            RecentLoginType = LoginType.Phone;
+        }
     }
 }

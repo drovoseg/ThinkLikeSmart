@@ -7,8 +7,9 @@
     <dimen name="edit_height">40dp</dimen>
     <dimen name="global_button_height">35dp</dimen>
     <dimen name="edit_icon_button_width">40dp</dimen>
-    <dimen name="text_size_normal">15sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
     <dimen name="item_group_margin_top">20dp</dimen>
+    <dimen name="item_group_margin_top_half">10dip</dimen>
     <dimen name="item_left_right_margin">10dp</dimen>
     <dimen name="edit_left_label_width">80dp</dimen>
 

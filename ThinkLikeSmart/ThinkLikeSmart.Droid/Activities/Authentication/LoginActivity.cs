@@ -5,7 +5,8 @@ using Android.OS;
 using Android.Widget;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
-using Tls.ThinkLikeSmart.Common.Views;
+using Tls.ThinkLikeSmart.Droid.Storage;
+using Android.Views;
 
 namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 {
@@ -40,22 +41,33 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         //    NormalDialog dialog_enter_ap;
         //    boolean isExitAp;
 
-        public VisibliltyMode CountriesContainerVisiblity { get; set; }
+        #region ILoginView properties implementations
 
-        public void TogglePhoneLoginType()
+        public bool IsCountryContainerVisible
         {
-            throw new NotImplementedException();
+            get
+            {
+                if (countryLayout.Visibility == ViewStates.Visible) return true;
+
+                return false;
+            }
+            set
+            {
+                if (value == true)
+                {
+                    countryLayout.Visibility = ViewStates.Visible;
+                }
+                else countryLayout.Visibility = ViewStates.Gone;
+            }
         }
 
-        public void ToggleEmailLoginType()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
+        #region lifecycle
 
         public LoginActivity()
         {
-            presenter = new LoginPresenter(this, null); //TODO: add andriond settings here
+            presenter = new LoginPresenter(this, new AndroidSettings()); //TODO: add andriond settings here
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -78,22 +90,26 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
             registerButton = (Button)FindViewById(Resource.Id.register);
             
-            loginEditText = (EditText)FindViewById(Resource.Id.phone_number);
-            passwordEditText = (EditText)FindViewById(Resource.Id.password);
-            rememberDialogLayout = (RelativeLayout)FindViewById(Resource.Id.dialog_remember);
-            rememberPasswordlayout = (RelativeLayout)FindViewById(Resource.Id.remember_pass);
-            rememberPasswordImageView = (ImageView)FindViewById(Resource.Id.remember_pwd_img);
-            countryNameTextView = (TextView)FindViewById(Resource.Id.name);
-            countryPnoneCodeTextView = (TextView)FindViewById(Resource.Id.count);
-            countryLayout = (RelativeLayout)FindViewById(Resource.Id.country_layout);
+            loginEditText = FindViewById<EditText>(Resource.Id.phone_number);
+            passwordEditText = FindViewById<EditText>(Resource.Id.password);
+            rememberDialogLayout = FindViewById<RelativeLayout>(Resource.Id.dialog_remember);
+            rememberPasswordlayout = FindViewById<RelativeLayout>(Resource.Id.remember_pass);
+            rememberPasswordImageView = FindViewById<ImageView>(Resource.Id.remember_pwd_img);
+            countryNameTextView = FindViewById<TextView>(Resource.Id.name);
+            countryPnoneCodeTextView = FindViewById<TextView>(Resource.Id.count);
+            countryLayout = FindViewById<RelativeLayout>(Resource.Id.country_layout);
 
-            loginTypeRadioGroup = (RadioGroup)FindViewById(Resource.Id.layout_login_type);
+            loginTypeRadioGroup = FindViewById<RadioGroup>(Resource.Id.layout_login_type);
+            RadioButton phoneRadioButton = FindViewById<RadioButton>(Resource.Id.type_phone);
+            RadioButton emailRadioButton = FindViewById<RadioButton>(Resource.Id.type_email);
 
             forgetPasswordTextView = (TextView)FindViewById(Resource.Id.forget_pwd);
             //tv_Anonymous_login = (TextView)FindViewById(Resource.Id.tv_Anonymous_login);
 
+            phoneRadioButton.Click += OnPhoneRadioButtonClick;
+            emailRadioButton.Click += OnEmailRadioButtonClick;
+
             forgetPasswordTextView.Click += OnForgetPasswordButtonClick;
-            loginTypeRadioGroup.CheckedChange += OnLoginTypeRadioGroupCheckedChange;
             countryLayout.Click += OnCountryLayoutClick;
             loginButton.Click += OnLoginButtonClick;
             registerButton.Click += OnRegisterButtonClick;
@@ -110,6 +126,10 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             //    showApDialog();
             //}
         }
+
+        #endregion
+
+        #region GUI event handlers
 
         private void OnRememberPasswordlayoutClick(object sender, EventArgs e)
         {
@@ -131,9 +151,14 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             throw new NotImplementedException();
         }
 
-        private void OnLoginTypeRadioGroupCheckedChange(object sender, RadioGroup.CheckedChangeEventArgs e)
+        private void OnEmailRadioButtonClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            presenter.HandleEmailRadioButtonClick();
+        }
+
+        private void OnPhoneRadioButtonClick(object sender, EventArgs e)
+        {
+            presenter.HandlePhoneRadioButtonClick();
         }
 
         private void OnForgetPasswordButtonClick(object sender, EventArgs e)
@@ -141,6 +166,21 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             throw new NotImplementedException();
         }
 
+        #endregion
+
+        #region ILoginView mehtod implementations
+
+        public void TogglePhoneLoginType()
+        {
+            loginTypeRadioGroup.Check(Resource.Id.type_phone);
+        }
+
+        public void ToggleEmailLoginType()
+        {
+            loginTypeRadioGroup.Check(Resource.Id.type_email);
+        }
+
+        #endregion
         //	public void initRememberPass()
         //{
         //    String recentName = "";
