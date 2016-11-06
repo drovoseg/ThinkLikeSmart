@@ -3,7 +3,6 @@ using NUnit.Framework;
 using System;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Storage;
-using Tls.ThinkLikeSmart.Common.Views;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 
 namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
@@ -36,9 +35,9 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, null));
         }
 
-        [TestCase(LoginType.Phone, VisibliltyMode.Visible)]
-        [TestCase(LoginType.Email, VisibliltyMode.Gone)]
-        public void ViewCreated_RecentLoginTypeIsPhone_CountriesContainerShouldBeSetProperly(LoginType arrangedLoginType, VisibliltyMode expectedMode)
+        [TestCase(LoginType.Phone, true)]
+        [TestCase(LoginType.Email, false)]
+        public void ViewCreated_RecentLoginTypeIsPhone_CountryContainerVisibilityShouldBeSetProperly(LoginType arrangedLoginType, bool expectedMode)
         {
             //Arrange
             settings.RecentLoginType.Returns(arrangedLoginType);
@@ -47,7 +46,7 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             loginPresenter.ViewCreated();
 
             //Assert
-            loginView.Received().CountriesContainerVisiblity = expectedMode;
+            loginView.Received().IsCountryContainerVisible = expectedMode;
         }
 
         [Test]
