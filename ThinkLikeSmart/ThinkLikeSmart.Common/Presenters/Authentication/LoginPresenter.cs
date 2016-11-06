@@ -30,16 +30,26 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
 
             if (currentType == LoginType.Phone)
             {
-                loginView.CountriesContainerVisiblity = VisibliltyMode.Visible;
+                loginView.IsCountryContainerVisible = true;
                 loginView.TogglePhoneLoginType();
             }
             else
             {
-                loginView.CountriesContainerVisiblity = VisibliltyMode.Gone;
+                loginView.IsCountryContainerVisible = false;
                 loginView.ToggleEmailLoginType();
             }
             //regFilter();
             //initRememberPass();
+        }
+
+        public void HandleEmailRadioButtonClick()
+        {
+            loginView.IsCountryContainerVisible = false;
+        }
+
+        public void HandlePhoneRadioButtonClick()
+        {
+            loginView.IsCountryContainerVisible = true;
         }
     }
 
