@@ -1,27 +1,24 @@
 {
-  "images": [
+  "images" : [
     {
-      "idiom": "universal"
+      "idiom" : "universal",
+      "filename" : "button_background.pdf"
     },
     {
-      "scale": "1x",
-      "idiom": "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
-      "scale": "2x",
-      "idiom": "universal"
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
-      "scale": "3x",
-      "idiom": "universal",
-      "filename": "bg_button.png"
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
-  "properties": {
-    "template-rendering-intent": ""
-  },
-  "info": {
-    "version": 1,
-    "author": ""
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
   }
 }
