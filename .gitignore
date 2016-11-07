@@ -22,6 +22,7 @@ Thumbs.db
 local.properties
 /ThinkLikeSmart/ThinkLikeSmart.Droid/Assets/AboutAssets.txt
 /ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/AboutResources.txt
-*.designer.cs
+
 .vs
 /packages
+/ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/Resource.designer.cs
