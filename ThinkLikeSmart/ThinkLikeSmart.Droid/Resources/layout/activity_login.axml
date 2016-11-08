@@ -121,7 +121,7 @@
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/text_size_normal" />
                 <EditText
-                    android:id="@+id/phone_number"
+                    android:id="@+id/account_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp"
@@ -180,14 +180,13 @@
                     android:textSize="@dimen/text_size_edit"
                     tools:ignore="RtlHardcoded" />
                 <RelativeLayout
-                    android:id="@+id/remember_pass"
                     android:layout_width="@dimen/edit_icon_button_width"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true">
-                    <ImageView
-                        android:id="@+id/remember_pwd_img"
+                    <ToggleButton
+                        android:id="@+id/remember_password_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
@@ -195,9 +194,10 @@
                         android:layout_centerVertical="true"
                         android:layout_margin="@dimen/login_img_remember_pwd_margin"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_remember_pwd"
-                        android:contentDescription="remember_pwd_img"
-                        tools:ignore="HardcodedText" />
+                        android:background="@drawable/remember_password_button"
+                        android:textOff=""
+                        android:textOn=""
+                        android:checked="false" />
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>

@@ -7,6 +7,7 @@ using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 using Tls.ThinkLikeSmart.Droid.Storage;
 using Android.Views;
+using Tls.ThinkLikeSmart.Common.Factories;
 
 namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 {
@@ -16,11 +17,10 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         private Button loginButton;
         private Button registerButton;
-        private EditText loginEditText;
+        private EditText accountNameEditText;
         private EditText passwordEditText;
         private RelativeLayout rememberDialogLayout;
-        private RelativeLayout rememberPasswordlayout;
-        private ImageView rememberPasswordImageView;
+        private ToggleButton rememberPasswordToggleButton;
         private TextView countryNameTextView;
         private TextView countryPnoneCodeTextView;
         private RelativeLayout countryLayout;
@@ -43,22 +43,34 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         #region ILoginView properties implementations
 
-        public bool IsCountryContainerVisible
+        public bool CountryContainerVisible
         {
             get
             {
-                if (countryLayout.Visibility == ViewStates.Visible) return true;
-
-                return false;
+                return countryLayout.Visibility == ViewStates.Visible;
             }
             set
             {
-                if (value == true)
-                {
-                    countryLayout.Visibility = ViewStates.Visible;
-                }
-                else countryLayout.Visibility = ViewStates.Gone;
+                countryLayout.Visibility = value ? ViewStates.Visible : ViewStates.Gone;
             }
+        }
+
+        public string AccountName
+        {
+            get { return accountNameEditText.Text; }
+            set { accountNameEditText.Text = value; }
+        }
+
+        public string Password
+        {
+            get { return passwordEditText.Text; }
+            set { passwordEditText.Text = value; }
+        }
+
+        public bool RememberPasswordToggled
+        {
+            get { return rememberPasswordToggleButton.Checked; }
+            set { rememberPasswordToggleButton.Checked = value; }
         }
 
         #endregion
@@ -67,7 +79,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         public LoginActivity()
         {
-            presenter = new LoginPresenter(this, new AndroidSettings()); //TODO: add andriond settings here
+            presenter = new LoginPresenter(this, new StrategiesFactory(), new AndroidSettings()); //TODO: add andriond settings here
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -90,11 +102,10 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
             registerButton = (Button)FindViewById(Resource.Id.register);
             
-            loginEditText = FindViewById<EditText>(Resource.Id.phone_number);
+            accountNameEditText = FindViewById<EditText>(Resource.Id.account_name);
             passwordEditText = FindViewById<EditText>(Resource.Id.password);
             rememberDialogLayout = FindViewById<RelativeLayout>(Resource.Id.dialog_remember);
-            rememberPasswordlayout = FindViewById<RelativeLayout>(Resource.Id.remember_pass);
-            rememberPasswordImageView = FindViewById<ImageView>(Resource.Id.remember_pwd_img);
+            rememberPasswordToggleButton = FindViewById<ToggleButton>(Resource.Id.remember_password_button);
             countryNameTextView = FindViewById<TextView>(Resource.Id.name);
             countryPnoneCodeTextView = FindViewById<TextView>(Resource.Id.count);
             countryLayout = FindViewById<RelativeLayout>(Resource.Id.country_layout);
@@ -113,7 +124,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             countryLayout.Click += OnCountryLayoutClick;
             loginButton.Click += OnLoginButtonClick;
             registerButton.Click += OnRegisterButtonClick;
-            rememberPasswordlayout.Click += OnRememberPasswordlayoutClick;
+            rememberPasswordToggleButton.Click += OnRememberPasswordToggleButtonClick;
             //tv_Anonymous_login.setOnClickListener(this);
             //isApEnter = SharedPreferencesManager.getInstance().getIsApEnter(
             //        mContext);
@@ -131,7 +142,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         #region GUI event handlers
 
-        private void OnRememberPasswordlayoutClick(object sender, EventArgs e)
+        private void OnRememberPasswordToggleButtonClick(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
@@ -181,122 +192,6 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         }
 
         #endregion
-        //	public void initRememberPass()
-        //{
-        //    String recentName = "";
-        //    String recentPwd = "";
-        //    String recentCode = "";
-        //    if (current_type == Constants.LoginType.PHONE)
-        //    {
-        //        recentName = SharedPreferencesManager.getInstance().getData(
-        //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-        //                SharedPreferencesManager.KEY_RECENTNAME);
-        //        recentPwd = SharedPreferencesManager.getInstance().getData(
-        //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-        //                SharedPreferencesManager.KEY_RECENTPASS);
-        //        recentCode = SharedPreferencesManager.getInstance().getData(
-        //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-        //                SharedPreferencesManager.KEY_RECENTCODE);
-
-        //        if (!recentName.equals(""))
-        //        {
-        //            mAccountName.setText(recentName);
-        //        }
-        //        else
-        //        {
-        //            mAccountName.setText("");
-        //        }
-
-        //        if (!recentCode.equals(""))
-        //        {
-        //            default_count.setText("+" + recentCode);
-        //            String name = SearchListActivity.getNameByCode(mContext,
-        //                    Integer.parseInt(recentCode));
-        //            default_name.setText(name);
-        //        }
-        //        else
-        //        {
-        //            if (getResources().getConfiguration().locale.getCountry()
-        //                    .equals("TW"))
-        //            {
-        //                default_count.setText("+886");
-        //                String name = SearchListActivity.getNameByCode(mContext,
-        //                        886);
-        //                default_name.setText(name);
-        //            }
-        //            else if (getResources().getConfiguration().locale
-        //                  .getCountry().equals("CN"))
-        //            {
-        //                default_count.setText("+86");
-        //                String name = SearchListActivity
-        //                        .getNameByCode(mContext, 86);
-        //                default_name.setText(name);
-        //            }
-        //            else
-        //            {
-        //                default_count.setText("+1");
-        //                String name = SearchListActivity.getNameByCode(mContext, 1);
-        //                default_name.setText(name);
-        //            }
-        //        }
-
-        //        if (SharedPreferencesManager.getInstance().getIsRememberPass(
-        //                mContext))
-        //        {
-        //            remember_pwd_img.setImageResource(R.drawable.ic_remember_pwd);
-        //            if (!recentPwd.equals(""))
-        //            {
-        //                mAccountPwd.setText(recentPwd);
-        //            }
-        //            else
-        //            {
-        //                mAccountPwd.setText("");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            remember_pwd_img.setImageResource(R.drawable.ic_unremember_pwd);
-        //            mAccountPwd.setText("");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        recentName = SharedPreferencesManager.getInstance().getData(
-        //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-        //                SharedPreferencesManager.KEY_RECENTNAME_EMAIL);
-        //        recentPwd = SharedPreferencesManager.getInstance().getData(
-        //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-        //                SharedPreferencesManager.KEY_RECENTPASS_EMAIL);
-
-        //        if (!recentName.equals(""))
-        //        {
-        //            mAccountName.setText(recentName);
-        //        }
-        //        else
-        //        {
-        //            mAccountName.setText("");
-        //        }
-
-        //        if (SharedPreferencesManager.getInstance().getIsRememberPass_email(
-        //                mContext))
-        //        {
-        //            remember_pwd_img.setImageResource(R.drawable.ic_remember_pwd);
-        //            if (!recentPwd.equals(""))
-        //            {
-        //                mAccountPwd.setText(recentPwd);
-        //            }
-        //            else
-        //            {
-        //                mAccountPwd.setText("");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            remember_pwd_img.setImageResource(R.drawable.ic_unremember_pwd);
-        //            mAccountPwd.setText("");
-        //        }
-        //    }
-        //}
 
         //public void regFilter()
         //{

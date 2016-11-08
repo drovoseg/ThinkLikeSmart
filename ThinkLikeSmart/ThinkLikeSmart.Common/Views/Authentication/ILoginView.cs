@@ -1,10 +1,12 @@
-﻿using Tls.ThinkLikeSmart.Common.Interfaces.Views;
-
-namespace Tls.ThinkLikeSmart.Common.Views.Authentication
+﻿namespace Tls.ThinkLikeSmart.Common.Views.Authentication
 {
     public interface ILoginView : ISystemView
     {
-        bool IsCountryContainerVisible { get; set; }
+        bool CountryContainerVisible { get; set; }
+        string AccountName { get; set; }
+        string Password { get; set; }
+        bool RememberPasswordToggled { get; set; }
+
         void TogglePhoneLoginType();
         void ToggleEmailLoginType();
     }

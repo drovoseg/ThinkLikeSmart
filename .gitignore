@@ -26,3 +26,4 @@ local.properties
 .vs
 /packages
 /ThinkLikeSmart/ThinkLikeSmart.Droid/Resources/Resource.designer.cs
+*.coverage

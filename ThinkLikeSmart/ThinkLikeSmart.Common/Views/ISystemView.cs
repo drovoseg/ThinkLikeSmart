@@ -1,4 +1,4 @@
-﻿namespace Tls.ThinkLikeSmart.Common.Interfaces.Views
+﻿namespace Tls.ThinkLikeSmart.Common.Views
 {
     public interface ISystemView
     {

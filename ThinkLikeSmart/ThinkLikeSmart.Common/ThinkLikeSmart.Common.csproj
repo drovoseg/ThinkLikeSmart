@@ -31,8 +31,13 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Factories\IStrategiesFactory.cs" />
+    <Compile Include="Factories\StrategiesFactory.cs" />
     <Compile Include="Presenters\Authentication\LoginType.cs" />
     <Compile Include="Storage\ISettings.cs" />
+    <Compile Include="Strategies\Authentication\ILoginStrategy.cs" />
+    <Compile Include="Strategies\Authentication\LoginViaEmailStrategy.cs" />
+    <Compile Include="Strategies\Authentication\LoginViaPhoneStrategy.cs" />
     <Compile Include="Views\Authentication\ILoginView.cs" />
     <Compile Include="Views\ISystemView.cs" />
     <Compile Include="Presenters\Authentication\LoginPresenter.cs" />

@@ -17,6 +17,10 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField accountNameTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView countyControlsContainerView { get; set; }
 
         [Outlet]
@@ -33,10 +37,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField loginTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField passwordTextField { get; set; }
 
         [Outlet]
@@ -49,6 +49,11 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 
         void ReleaseDesignerOutlets ()
         {
+            if (accountNameTextField != null) {
+                accountNameTextField.Dispose ();
+                accountNameTextField = null;
+            }
+
             if (countyControlsContainerView != null) {
                 countyControlsContainerView.Dispose ();
                 countyControlsContainerView = null;
@@ -67,11 +72,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             if (loginMethodSegmentedControl != null) {
                 loginMethodSegmentedControl.Dispose ();
                 loginMethodSegmentedControl = null;
-            }
-
-            if (loginTextField != null) {
-                loginTextField.Dispose ();
-                loginTextField = null;
             }
 
             if (passwordTextField != null) {

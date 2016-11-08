@@ -1,6 +1,7 @@
 ﻿using System;
+using Tls.ThinkLikeSmart.Common.Factories;
 using Tls.ThinkLikeSmart.Common.Storage;
-using Tls.ThinkLikeSmart.Common.Views;
+using Tls.ThinkLikeSmart.Common.Strategies.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 
 namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
@@ -10,46 +11,59 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
         private readonly ILoginView loginView;
         private readonly ISettings settings;
 
-        private LoginType currentType;
 
-        public LoginPresenter(ILoginView loginView, ISettings settings)
+        private ILoginStrategy currentloginStrategy = null;
+        private readonly ILoginStrategy loginViaPhoneStrategy;
+        private readonly ILoginStrategy loginViaEmailStrategy;
+
+        public LoginPresenter(ILoginView loginView, IStrategiesFactory factory, ISettings settings)
         {
             if (loginView == null)
                 throw new ArgumentNullException(nameof(loginView));
+
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
 
             if (settings == null)
                 throw new ArgumentNullException(nameof(settings));
 
             this.loginView = loginView;
             this.settings = settings;
+
+            loginViaPhoneStrategy = factory.CreateLoginStrategy(LoginType.Phone, loginView, settings);
+            loginViaEmailStrategy = factory.CreateLoginStrategy(LoginType.Email, loginView, settings);
         }
 
         public override void ViewCreated()
         {
-            currentType = settings.RecentLoginType;
 
-            if (currentType == LoginType.Phone)
+            if (settings.RecentLoginType == LoginType.Phone)
             {
-                loginView.IsCountryContainerVisible = true;
+                loginView.CountryContainerVisible = true;
                 loginView.TogglePhoneLoginType();
+
+                currentloginStrategy = loginViaPhoneStrategy;
             }
             else
             {
-                loginView.IsCountryContainerVisible = false;
+                loginView.CountryContainerVisible = false;
                 loginView.ToggleEmailLoginType();
+
+                currentloginStrategy = loginViaEmailStrategy;
             }
             //regFilter();
-            //initRememberPass();
+
+            currentloginStrategy.InitializeView();
         }
 
         public void HandleEmailRadioButtonClick()
         {
-            loginView.IsCountryContainerVisible = false;
+            loginView.CountryContainerVisible = false;
         }
 
         public void HandlePhoneRadioButtonClick()
         {
-            loginView.IsCountryContainerVisible = true;
+            loginView.CountryContainerVisible = true;
         }
     }
 

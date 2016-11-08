@@ -1,5 +1,6 @@
 ﻿
 using System;
+using Tls.ThinkLikeSmart.Common.Factories;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 using Tls.ThinkLikeSmart.iOS.Storage;
@@ -12,21 +13,42 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         private const int PhoneSegment = 1;
         private const int EmailSegment = 0;
 
-        private LoginPresenter presenter;
-        
+        private readonly LoginPresenter presenter;
 
-        public bool IsCountryContainerVisible
+        #region ILoginView properties implementations
+
+        public bool CountryContainerVisible
         {
             get { return !countyControlsContainerView.Hidden; }
             set { countyControlsContainerView.Hidden = !value; }
         }
 
-        public LoginViewController(IntPtr handle) : base(handle)
+        public string AccountName
         {
-            presenter = new LoginPresenter(this, new IosSettings());
+            get { return accountNameTextField.Text; }
+            set { accountNameTextField.Text = value; }
         }
 
+        public string Password
+        {
+            get { return passwordTextField.Text; }
+            set { passwordTextField.Text = value; }
+        }
+
+        public bool RememberPasswordToggled
+        {
+            get { return rememberPasswordButton.Selected; }
+            set { rememberPasswordButton.Selected = value; }
+        }
+
+        #endregion
+
         #region View lifecycle
+
+        public LoginViewController(IntPtr handle) : base(handle)
+        {
+            presenter = new LoginPresenter(this, new StrategiesFactory(), new IosSettings());
+        }
 
         public override void ViewDidLoad()
         {
@@ -92,6 +114,9 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
                 presenter.HandleEmailRadioButtonClick();
             }
             else presenter.HandlePhoneRadioButtonClick();
+
+            accountNameTextField.ResignFirstResponder();
+            passwordTextField.ResignFirstResponder();
         }
 
         #endregion

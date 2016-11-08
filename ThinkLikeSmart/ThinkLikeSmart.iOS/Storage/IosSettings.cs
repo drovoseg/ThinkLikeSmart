@@ -7,9 +7,18 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
     {
         public LoginType RecentLoginType { get; set; }
 
+        public string RecentAccountName { get; set; }
+
+        public string RecentPassword { get; set; }
+
+        public bool NeedToRememberRecentPassword { get; set; }
+
         public IosSettings()
         {
-            RecentLoginType = LoginType.Phone;
+            RecentLoginType = LoginType.Email;
+            RecentAccountName = "yevgeny.sotnikov@gmail.com";
+            RecentPassword = "drovoseg";
+            //NeedToRememberRecentPassword = true;
         }
     }
 }

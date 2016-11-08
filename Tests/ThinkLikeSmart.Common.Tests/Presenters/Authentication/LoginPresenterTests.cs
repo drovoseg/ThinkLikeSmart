@@ -1,6 +1,7 @@
 ﻿using NSubstitute;
 using NUnit.Framework;
 using System;
+using Tls.ThinkLikeSmart.Common.Factories;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Storage;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
@@ -13,26 +14,34 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
         private LoginPresenter loginPresenter;
         private ISettings settings;
         private ILoginView loginView;
+        private IStrategiesFactory factory;
 
         [SetUp]
         public void SetUp()
         {
             settings = Substitute.For<ISettings>();
             loginView = Substitute.For<ILoginView>();
+            factory = Substitute.For<IStrategiesFactory>();
 
-            loginPresenter = new LoginPresenter(loginView, settings);
+            loginPresenter = new LoginPresenter(loginView, factory, settings);
         }
 
         [Test]
         public void Constructor_ViewParamIsNull_ShouldArgumentNullExceptionThrow()
         {
-            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(null, settings));
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(null, factory, settings));
+        }
+
+        [Test]
+        public void Constructor_FactoryParamIsNull_ShouldArgumentNullExceptionThrow()
+        {
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, null, settings));
         }
 
         [Test]
         public void Constructor_SettingsParamIsNull_ShouldArgumentNullExceptionThrow()
         {
-            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, null));
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, factory, null));
         }
 
         [TestCase(LoginType.Phone, true)]
@@ -46,7 +55,7 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             loginPresenter.ViewCreated();
 
             //Assert
-            loginView.Received().IsCountryContainerVisible = expectedMode;
+            loginView.Received().CountryContainerVisible = expectedMode;
         }
 
         [Test]
