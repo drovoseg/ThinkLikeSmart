@@ -41,6 +41,7 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
             {
                 loginView.CountryContainerVisible = true;
                 loginView.TogglePhoneLoginType();
+                loginView.SetAccountNamePhoneHint();
 
                 currentloginStrategy = loginViaPhoneStrategy;
             }
@@ -48,6 +49,7 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
             {
                 loginView.CountryContainerVisible = false;
                 loginView.ToggleEmailLoginType();
+                loginView.SetAccountNameEmailHint();
 
                 currentloginStrategy = loginViaEmailStrategy;
             }
@@ -59,11 +61,13 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
         public void HandleEmailRadioButtonClick()
         {
             loginView.CountryContainerVisible = false;
+            loginView.SetAccountNameEmailHint();
         }
 
         public void HandlePhoneRadioButtonClick()
         {
             loginView.CountryContainerVisible = true;
+            loginView.SetAccountNamePhoneHint();
         }
     }
 

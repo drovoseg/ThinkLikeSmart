@@ -191,6 +191,14 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             loginTypeRadioGroup.Check(Resource.Id.type_email);
         }
 
+        public void SetAccountNamePhoneHint()
+        {
+        }
+
+        public void SetAccountNameEmailHint()
+        {
+        }
+
         #endregion
 
         //public void regFilter()

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using Foundation;
 using Tls.ThinkLikeSmart.Common.Factories;
 using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
@@ -131,6 +132,16 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         public void ToggleEmailLoginType()
         {
             loginMethodSegmentedControl.SelectedSegment = EmailSegment;
+        }
+
+        public void SetAccountNamePhoneHint()
+        {
+            accountNameTextField.Placeholder = NSBundle.MainBundle.LocalizedString("input_phone", "");
+        }
+
+        public void SetAccountNameEmailHint()
+        {
+            accountNameTextField.Placeholder = NSBundle.MainBundle.LocalizedString("input_email", "");
         }
 
         #endregion

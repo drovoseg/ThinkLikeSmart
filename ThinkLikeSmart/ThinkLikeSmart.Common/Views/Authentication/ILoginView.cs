@@ -9,5 +9,7 @@
 
         void TogglePhoneLoginType();
         void ToggleEmailLoginType();
+        void SetAccountNamePhoneHint();
+        void SetAccountNameEmailHint();
     }
 }
