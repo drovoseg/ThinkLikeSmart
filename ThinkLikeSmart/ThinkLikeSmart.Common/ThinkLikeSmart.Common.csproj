@@ -34,6 +34,7 @@
     <Compile Include="Factories\IStrategiesFactory.cs" />
     <Compile Include="Factories\StrategiesFactory.cs" />
     <Compile Include="Presenters\Authentication\LoginType.cs" />
+    <Compile Include="Storage\IResourcesProvider.cs" />
     <Compile Include="Storage\ISettings.cs" />
     <Compile Include="Strategies\Authentication\ILoginStrategy.cs" />
     <Compile Include="Strategies\Authentication\LoginViaEmailStrategy.cs" />

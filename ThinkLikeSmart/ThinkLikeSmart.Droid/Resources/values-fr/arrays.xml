@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries_array">
+        <item>Albanie:355</item>
+        <item>Algérie:213</item>
+        <item>Afghanistan:93</item>
+        <item>Argentine:54</item>
+        <item>Emirats Arabes Unis:971</item>
+        <item>Aruba:297</item>
+        <item>Oman:968</item>
+        <item>Azerbaïdjan:994</item>
+        <item>Ascension:247</item>
+        <item>Égypte:20</item>
+        <item>Éthiopie:251</item>
+        <item>Irlande:353</item>
+        <item>Estonie:372</item>
+        <item>Andorre:376</item>
+        <item>Angola:244</item>
+        <item>Anguilla:1264</item>
+        <item>Antigua-et-Barbuda:1268</item>
+        <item>Autriche:43</item>
+        <item>Îles Aland:358</item>
+        <item>Australie:61</item>
+        <item>Macao:853</item>
+        <item>Barbade:1246</item>
+        <item>Papouasie-Nouvelle-Guinée:675</item>
+        <item>Bahamas:1242</item>
+        <item>Pakistan:92</item>
+        <item>Paraguay:595</item>
+        <item>Palestine:970</item>
+        <item>Bahreïn:973</item>
+        <item>Panama:507</item>
+        <item>Brésil:55</item>
+        <item>Bélarus:375</item>
+        <item>Bermudes:1441</item>
+        <item>Bulgare:359</item>
+        <item>Amérique:1</item>
+        <item>Bénin:229</item>
+        <item>Belgique:32</item>
+        <item>Islande:354</item>
+        <item>Bolivie:591</item>
+        <item>Porto Rico:1787</item>
+        <item>Pologne:48</item>
+        <item>Bosnie-Herzégovine:387</item>
+        <item>Botswana:267</item>
+        <item>Belize:501</item>
+        <item>Bhoutan:975</item>
+        <item>Burkina Faso:226</item>
+        <item>Burundi:257</item>
+        <item>Corée:850</item>
+        <item>Guinée équatoriale:240</item>
+        <item>Danemark:45</item>
+        <item>Allemagne:49</item>
+        <item>Timor oriental:670</item>
+        <item>Togo:228</item>
+        <item>République dominicaine:1809</item>
+        <item>Dominique:1767</item>
+        <item>Russie:7</item>
+        <item>Équateur:593</item>
+        <item>Érythrée:291</item>
+        <item>France:33</item>
+        <item>Îles Féroé:298</item>
+        <item>Polynésie française:689</item>
+        <item>Guyane française:594</item>
+        <item>Saint-Martin français:590</item>
+        <item>Philippines:63</item>
+        <item>Cap-Vert:238</item>
+        <item>îles Falkland:500</item>
+        <item>Gambie:220</item>
+        <item>Congo (Brazzaville):242</item>
+        <item>Congo (RDC):243</item>
+        <item>Colombie:57</item>
+        <item>Costa Rica:506</item>
+        <item>Grenade:1473</item>
+        <item>Groenland:299</item>
+        <item>Géorgie:995</item>
+        <item>Guernesey:44</item>
+        <item>Cuba:53</item>
+        <item>Guam:1671</item>
+        <item>Guyane:592</item>
+        <item>Haïti:509</item>
+        <item>Corée:82</item>
+        <item>Pays-Bas:31</item>
+        <item>Caraïbes hollandaises:599</item>
+        <item>Saint-Martin:1721</item>
+        <item>Monténégro:382</item>
+        <item>Honduras:504</item>
+        <item>Kiribati:686</item>
+        <item>Djibouti:253</item>
+        <item>Kirghizstan:996</item>
+        <item>Guinée:224</item>
+        <item>Guinée-Bissau:245</item>
+        <item>Ghana:233</item>
+        <item>Gabon:241</item>
+        <item>Cambodge:855</item>
+        <item>République tchèque:420</item>
+        <item>Zimbabwe:263</item>
+        <item>Cameroun:237</item>
+        <item>Qatar:974</item>
+        <item>Îles Caïmans:1345</item>
+        <item>Comores:269</item>
+        <item>Côte d\'Ivoire:225</item>
+        <item>Koweït:965</item>
+        <item>Croatie:385</item>
+        <item>Kenya:254</item>
+        <item>Îles Cook:682</item>
+        <item>Lettonie:371</item>
+        <item>Lesotho:266</item>
+        <item>Laos:856</item>
+        <item>Liban:961</item>
+        <item>Liberia:231</item>
+        <item>Libye:218</item>
+        <item>Lituanie:370</item>
+        <item>Liechtenstein:423</item>
+        <item>Réunion:262</item>
+        <item>Luxembourg:352</item>
+        <item>Rwanda:250</item>
+        <item>Roumanie:40</item>
+        <item>Madagascar:261</item>
+        <item>Malte:356</item>
+        <item>Maldives:960</item>
+        <item>Malawi:265</item>
+        <item>Malaisie:60</item>
+        <item>Mali:223</item>
+        <item>Macédoine:389</item>
+        <item>Les Îles Marshall:692</item>
+        <item>Martinique:596</item>
+        <item>Maurice:230</item>
+        <item>Mauritanie:222</item>
+        <item>Samoa:1684</item>
+        <item>Îles Vierges américaines:1340</item>
+        <item>Mongolie:976</item>
+        <item>Monserrate:1664</item>
+        <item>Bangladesh:880</item>
+        <item>Pérou:51</item>
+        <item>États fédérés de Micronésie:691</item>
+        <item>Myanmar:95</item>
+        <item>Moldova:373</item>
+        <item>Maroc:212</item>
+        <item>Monaco:377</item>
+        <item>Mozambique:258</item>
+        <item>Mexique:52</item>
+        <item>Namibie:264</item>
+        <item>Afrique du Sud:27</item>
+        <item>Soudan du Sud:211</item>
+        <item>Népal:977</item>
+        <item>Nicaragua:505</item>
+        <item>Niger:227</item>
+        <item>Nigeria:234</item>
+        <item>Niue:683</item>
+        <item>Norvège:47</item>
+        <item>Île Norfolk:6723</item>
+        <item>Palaos:680</item>
+        <item>Portugal:351</item>
+        <item>Japon:81</item>
+        <item>Suède:46</item>
+        <item>Suisse:41</item>
+        <item>El Salvador:503</item>
+        <item>Samoa:685</item>
+        <item>Serbie:381</item>
+        <item>Sierra Leone:232</item>
+        <item>Sénégal:221</item>
+        <item>Chypre:357</item>
+        <item>Seychelles:248</item>
+        <item>Arabie saoudite:966</item>
+        <item>Sao Tomé-et-Principe:239</item>
+        <item>Sainte-Hélène:290</item>
+        <item>Saint-Kitts-et-Nevis:1869</item>
+        <item>Sainte-Lucie:1758</item>
+        <item>Saint-Marin:378</item><item>Saint Pierre et Miquelon:508</item>
+        <item>Saint-Vincent-et-les Grenadines:1784</item>
+        <item>Sri Lanka:94</item>
+        <item>Slovaquie:421</item>
+        <item>Slovénie:386</item>
+        <item>Swaziland:268</item>
+        <item>Soudan:249</item>
+        <item>Surinam:597</item>
+        <item>Somalie:252</item>
+        <item>Iles Salomon:677</item>
+        <item>Tadjikistan:992</item>
+        <item>Taiwan:886</item>
+        <item>Thaïlande:66</item>
+        <item>Tanzanie:255</item>
+        <item>Tonga:676</item>
+        <item>Îles Turques et Caïques:1649</item>
+        <item>Trinité-et-Tobago:1868</item>
+        <item>Tunisie:216</item>
+        <item>Tuvalu:688</item>
+        <item>Turquie:90</item>
+        <item>Turkménistan:993</item>
+        <item>Tokélaou:690</item>
+        <item>Wallis et Futuna:681</item>
+        <item>Vanuatu:678</item>
+        <item>Guatemala:502</item>
+        <item>Venezuela:58</item>
+        <item>Brunei:673</item>
+        <item>Ouganda:256</item>
+        <item>Ukraine:380</item>
+        <item>Uruguay:598</item>
+        <item>Ouzbékistan:998</item>
+        <item>Espagne:34</item>
+        <item>Grèce:30</item>
+        <item>Hong Kong:852</item>
+        <item>Singapour:65</item>
+        <item>Nouvelle-Calédonie:687</item>
+        <item>Nouvelle-Zélande:64</item>
+        <item>Hongrie:36</item>
+        <item>Syrie:963</item>
+        <item>Jamaïque:1876</item>
+        <item>Arménie:374</item>
+        <item>Yémen:967</item>
+        <item>Irak:964</item>
+        <item>Iran:98</item>
+        <item>Israël:972</item>
+        <item>Italie:39</item>
+        <item>Inde:91</item>
+        <item>Indonésie:62</item>
+        <item>Îles Vierges britanniques:1284</item>
+        <item>Territoire britannique de l\'océan Indien:246</item>
+        <item>Jordanie:962</item>
+        <item>Vietnam:84</item>
+        <item>Zambie:260</item>
+        <item>Tchad:235</item>
+        <item>Gibraltar:350</item>
+        <item>Chili:56</item>
+        <item>République centrafricaine:236</item>
+        <item>Chine:86</item>
+        <item>Nauru:674</item>
+        <item>Le Vatican:379</item>
+        <item>Fidji:679</item>
+        <item>Finlande:358</item>
+        <item>Guadeloupe:590</item>
+        <item>Kazakhstan:7</item>
+        <item>Canada:1</item>
+        <item>Îles Cocos:61</item>
+        <item>Curaçao:599</item>
+        <item>Mayotte:262</item>
+        <item>Ile de Man:44</item><item>Îles Mariannes du Nord:1</item>
+        <item>Saint-Barthélemy:590</item>
+        <item>Île Christmas:61</item>
+        <item>Svalbard et Jan Mayen:47</item>
+        <item>Tristan - da Cunha:290</item>
+        <item>Sahara occidental:212</item>
+        <item>Grande-Bretagne:44</item>
+        <item>Jersey:44</item>
+    </string-array>
+</resources>

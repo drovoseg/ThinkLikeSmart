@@ -185,6 +185,7 @@
     <BundleResource Include="Resources\ru.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Storage\IosResourcesProvider.cs" />
     <Compile Include="Storage\IosSettings.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

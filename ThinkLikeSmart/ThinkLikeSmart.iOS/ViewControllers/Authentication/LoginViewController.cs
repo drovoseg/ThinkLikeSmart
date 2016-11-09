@@ -92,19 +92,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         #endregion
 
         #region GUI event handlers
-        //#pragma mark - 选择登录界面：邮箱登录和手机号登录
-        //-(void)onLoginTypeChange:(UISegmentedControl*)control{
-
-        //    self.loginType = control.selectedSegmentIndex;
-
-        //    if(self.loginType==0){
-        //        [self.usernameField2 resignFirstResponder];
-        //        [self.passwrodField2 resignFirstResponder];
-        //    }else{
-        //        [self.usernameField1 resignFirstResponder];
-        //        [self.passwrodField1 resignFirstResponder];
-        //    }
-        //}
 
         private void OnLoginMethodSegmentedControlValueChanged(object sender, EventArgs e)
         {
