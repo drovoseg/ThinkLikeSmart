@@ -6,7 +6,7 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
 {
     public class IosResourcesProvider : IResourcesProvider
     {
-        public string GetCountryNameByCode(ushort code)
+        public string GetLocalizedCountryNameByCode(string code)
         {
             string stringsList = NSBundle.MainBundle.LocalizedString("countries_array", "");
 
@@ -19,7 +19,7 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
 
             while (match.Success)
             {
-                if (int.Parse(match.Groups[2].Value) == code)
+                if (match.Groups[2].Value == code)
                     return match.Groups[1].Value;
 
                 match = match.NextMatch();

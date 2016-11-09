@@ -5,7 +5,7 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
 {
     class AndroidResourcesProvider : IResourcesProvider
     {
-        public string GetCountryNameByCode(ushort code)
+        public string GetLocalizedCountryNameByCode(string code)
         {
             string[] countryCodeNameStringPairs = Application.Context.Resources.GetStringArray(Resource.Array.countries_array);
 
@@ -13,7 +13,7 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
             {
                 string[] splitArray = stringPair.Split(':');
 
-                if (ushort.Parse(splitArray[1]) == code)
+                if (splitArray[1] == code)
                     return splitArray[0];
             }
 
