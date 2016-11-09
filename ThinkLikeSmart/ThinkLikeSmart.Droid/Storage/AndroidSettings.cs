@@ -7,6 +7,8 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
     {
         public LoginType RecentLoginType { get; set; }
 
+        public string RecentCountryPhoneCode { get; set; }
+
         public string RecentAccountName { get; set; }
 
         public string RecentPassword { get; set; }
@@ -15,7 +17,8 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
 
         public AndroidSettings()
         {
-            RecentLoginType = LoginType.Email;
+            RecentLoginType = LoginType.Phone;
+            RecentCountryPhoneCode = "380";
             RecentAccountName = "yevgeny.sotnikov@gmail.com";
             RecentPassword = "drovoseg";
             //NeedToRememberRecentPassword = true;
