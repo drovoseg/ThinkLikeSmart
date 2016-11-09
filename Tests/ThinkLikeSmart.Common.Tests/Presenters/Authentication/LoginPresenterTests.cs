@@ -15,6 +15,7 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
         private ISettings settings;
         private ILoginView loginView;
         private IStrategiesFactory factory;
+        private IResourcesProvider resourcesProvider;
 
         [SetUp]
         public void SetUp()
@@ -22,26 +23,33 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             settings = Substitute.For<ISettings>();
             loginView = Substitute.For<ILoginView>();
             factory = Substitute.For<IStrategiesFactory>();
+            resourcesProvider = Substitute.For<IResourcesProvider>();
 
-            loginPresenter = new LoginPresenter(loginView, factory, settings);
+            loginPresenter = new LoginPresenter(loginView, factory, settings, resourcesProvider);
         }
 
         [Test]
         public void Constructor_ViewParamIsNull_ShouldArgumentNullExceptionThrow()
         {
-            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(null, factory, settings));
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(null, factory, settings, resourcesProvider));
         }
 
         [Test]
         public void Constructor_FactoryParamIsNull_ShouldArgumentNullExceptionThrow()
         {
-            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, null, settings));
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, null, settings, resourcesProvider));
         }
 
         [Test]
         public void Constructor_SettingsParamIsNull_ShouldArgumentNullExceptionThrow()
         {
-            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, factory, null));
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, factory, null, resourcesProvider));
+        }
+
+        [Test]
+        public void Constructor_ResourcesProviderParamIsNull_ShouldArgumentNullExceptionThrow()
+        {
+            Assert.Throws<ArgumentNullException>(() => new LoginPresenter(loginView, factory, settings, null));
         }
 
         [TestCase(LoginType.Phone, true)]
@@ -90,6 +98,7 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             settings = null;
             loginView = null;
             loginPresenter = null;
+            resourcesProvider = null;
         }
     }
 }
