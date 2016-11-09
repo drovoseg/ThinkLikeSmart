@@ -21,6 +21,14 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel countryNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel countryPhoneCodeLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView countyControlsContainerView { get; set; }
 
         [Outlet]
@@ -52,6 +60,16 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             if (accountNameTextField != null) {
                 accountNameTextField.Dispose ();
                 accountNameTextField = null;
+            }
+
+            if (countryNameLabel != null) {
+                countryNameLabel.Dispose ();
+                countryNameLabel = null;
+            }
+
+            if (countryPhoneCodeLabel != null) {
+                countryPhoneCodeLabel.Dispose ();
+                countryPhoneCodeLabel = null;
             }
 
             if (countyControlsContainerView != null) {

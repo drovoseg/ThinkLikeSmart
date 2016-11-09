@@ -42,13 +42,25 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             set { rememberPasswordButton.Selected = value; }
         }
 
+        public string CountryPhoneCode
+        {
+            get { return countryPhoneCodeLabel.Text; }
+            set { countryPhoneCodeLabel.Text = value; }
+        }
+
+        public string CountryName
+        {
+            get { return countryNameLabel.Text; }
+            set { countryNameLabel.Text = value; }
+        }
+
         #endregion
 
         #region View lifecycle
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
-            presenter = new LoginPresenter(this, new StrategiesFactory(), new IosSettings());
+            presenter = new LoginPresenter(this, new StrategiesFactory(), new IosSettings(), new IosResourcesProvider());
         }
 
         public override void ViewDidLoad()
@@ -56,6 +68,7 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             base.ViewDidLoad();
 
             loginMethodSegmentedControl.ValueChanged += OnLoginMethodSegmentedControlValueChanged;
+
             // Perform any additional setup after loading the view, typically from a nib.
             presenter.ViewCreated();
         }

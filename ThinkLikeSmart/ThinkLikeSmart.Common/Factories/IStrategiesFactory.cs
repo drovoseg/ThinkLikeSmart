@@ -7,6 +7,6 @@ namespace Tls.ThinkLikeSmart.Common.Factories
 {
     public interface IStrategiesFactory
     {
-        ILoginStrategy CreateLoginStrategy(LoginType loginType, ILoginView loginView, ISettings settings);
+        ILoginStrategy CreateLoginStrategy(LoginType loginType, ILoginView loginView, ISettings settings, IResourcesProvider resourcesProvider);
     }
 }

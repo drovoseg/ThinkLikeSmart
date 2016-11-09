@@ -8,8 +8,9 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
     {
         private readonly ILoginView loginView;
         private readonly ISettings settings;
+        private readonly IResourcesProvider resourcesProvider;
 
-        public LoginViaPhoneStrategy(ILoginView loginView, ISettings settings)
+        public LoginViaPhoneStrategy(ILoginView loginView, ISettings settings, IResourcesProvider resourcesProvider)
         {
             if (loginView == null)
                 throw new ArgumentNullException(nameof(loginView));
@@ -17,8 +18,12 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
             if (settings == null)
                 throw new ArgumentNullException(nameof(settings));
 
+            if (resourcesProvider == null)
+                throw new ArgumentNullException(nameof(resourcesProvider));
+
             this.loginView = loginView;
             this.settings = settings;
+            this.resourcesProvider = resourcesProvider;
         }
 
         public void InitializeView()
@@ -30,17 +35,13 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
             //        recentPwd = SharedPreferencesManager.getInstance().getData(
             //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
             //                SharedPreferencesManager.KEY_RECENTPASS);
-            //        recentCode = SharedPreferencesManager.getInstance().getData(
-            //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-            //                SharedPreferencesManager.KEY_RECENTCODE);
+            string recentCountryPhoneCode = settings.RecentCountryPhoneCode;
 
-            //        if (!recentCode.equals(""))
-            //        {
-            //            default_count.setText("+" + recentCode);
-            //            String name = SearchListActivity.getNameByCode(mContext,
-            //                    Integer.parseInt(recentCode));
-            //            default_name.setText(name);
-            //        }
+            if (recentCountryPhoneCode != string.Empty)
+            {
+                loginView.CountryPhoneCode = '+' + recentCountryPhoneCode;
+                loginView.CountryName = resourcesProvider.GetLocalizedCountryNameByCode(recentCountryPhoneCode);
+            }
             //        else
             //        {
             //            if (getResources().getConfiguration().locale.getCountry()

@@ -154,6 +154,8 @@
                         <outlet property="passwordTextField" destination="18" id="name-outlet-18"/>
                         <outlet property="registrationButton" destination="120" id="name-outlet-120"/>
                         <outlet property="rememberPasswordButton" destination="146" id="name-outlet-146"/>
+                        <outlet property="countryPhoneCodeLabel" destination="362" id="name-outlet-362"/>
+                        <outlet property="countryNameLabel" destination="363" id="name-outlet-363"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -73,13 +73,25 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             set { rememberPasswordToggleButton.Checked = value; }
         }
 
+        public string CountryPhoneCode
+        {
+            get { return countryPnoneCodeTextView.Text; }
+            set { countryPnoneCodeTextView.Text = value; }
+        }
+
+        public string CountryName
+        {
+            get { return countryNameTextView.Text; }
+            set { countryNameTextView.Text = value; }
+        }
+
         #endregion
 
         #region lifecycle
 
         public LoginActivity()
         {
-            presenter = new LoginPresenter(this, new StrategiesFactory(), new AndroidSettings()); //TODO: add andriond settings here
+            presenter = new LoginPresenter(this, new StrategiesFactory(), new AndroidSettings(), new AndroidResourcesProvider());
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
