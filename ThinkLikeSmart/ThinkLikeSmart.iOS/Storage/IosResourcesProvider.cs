@@ -6,12 +6,13 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
 {
     public class IosResourcesProvider : IResourcesProvider
     {
-        public string GetLocalizedCountryNameByCode(string code)
+        readonly Regex regex = new Regex("(.+?):(\\d+),?");
+
+        public string GetLocalizedCountryNameByCode(ushort code)
         {
+            string codeString = code.ToString();
             string stringsList = NSBundle.MainBundle.LocalizedString("countries_array", "");
-
-            Regex regex = new Regex("(.+?):(\\d+),?");
-
+            
             Match match = regex.Match(stringsList);
 
             if (!match.Success)
@@ -19,7 +20,7 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
 
             while (match.Success)
             {
-                if (match.Groups[2].Value == code)
+                if (match.Groups[2].Value == codeString)
                     return match.Groups[1].Value;
 
                 match = match.NextMatch();

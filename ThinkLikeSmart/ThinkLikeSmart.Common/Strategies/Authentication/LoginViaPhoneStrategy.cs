@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Tls.ThinkLikeSmart.Common.Storage;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 
@@ -35,11 +36,11 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
             //        recentPwd = SharedPreferencesManager.getInstance().getData(
             //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
             //                SharedPreferencesManager.KEY_RECENTPASS);
-            string recentCountryPhoneCode = settings.RecentCountryPhoneCode;
+            ushort recentCountryPhoneCode = settings.RecentCountryPhoneCode;
 
-            if (recentCountryPhoneCode != string.Empty)
+            if (recentCountryPhoneCode != 0)
             {
-                loginView.CountryPhoneCode = '+' + recentCountryPhoneCode;
+                loginView.CountryPhoneCode = "+" + recentCountryPhoneCode;
                 loginView.CountryName = resourcesProvider.GetLocalizedCountryNameByCode(recentCountryPhoneCode);
             }
             //        else

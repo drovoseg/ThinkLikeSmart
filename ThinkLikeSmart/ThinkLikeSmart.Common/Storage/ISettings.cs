@@ -6,7 +6,7 @@ namespace Tls.ThinkLikeSmart.Common.Storage
     {
         LoginType RecentLoginType { get; set; }
 
-        string RecentCountryPhoneCode { get; set; }
+        ushort RecentCountryPhoneCode { get; set; }
 
         string RecentAccountName { get; set; }
 
