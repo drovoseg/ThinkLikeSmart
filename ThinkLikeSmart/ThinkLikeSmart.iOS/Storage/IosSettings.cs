@@ -1,10 +1,21 @@
-﻿using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
+﻿using Foundation;
+using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Storage;
 
 namespace Tls.ThinkLikeSmart.iOS.Storage
 {
     class IosSettings : ISettings
     {
+        public string CurrentLanguage
+        {
+            get { return NSLocale.CurrentLocale.LanguageCode; }
+        }
+
+        public string CurrentCountry
+        {
+            get { return NSLocale.CurrentLocale.CountryCode; }
+        }
+
         public LoginType RecentLoginType { get; set; }
 
         public ushort RecentCountryPhoneCode { get; set; }
@@ -18,7 +29,7 @@ namespace Tls.ThinkLikeSmart.iOS.Storage
         public IosSettings()
         {
             RecentLoginType = LoginType.Phone;
-            RecentCountryPhoneCode = 7;
+            RecentCountryPhoneCode = 0;
             RecentAccountName = "yevgeny.sotnikov@gmail.com";
             RecentPassword = "drovoseg";
             //NeedToRememberRecentPassword = true;

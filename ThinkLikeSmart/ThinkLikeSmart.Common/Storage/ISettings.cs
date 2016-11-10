@@ -4,6 +4,10 @@ namespace Tls.ThinkLikeSmart.Common.Storage
 {
     public interface ISettings
     {
+        string CurrentCountry { get; }
+
+        string CurrentLanguage { get; }
+
         LoginType RecentLoginType { get; set; }
 
         ushort RecentCountryPhoneCode { get; set; }
