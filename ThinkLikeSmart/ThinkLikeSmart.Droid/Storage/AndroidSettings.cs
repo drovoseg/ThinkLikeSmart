@@ -38,7 +38,7 @@ namespace Tls.ThinkLikeSmart.Droid.Storage
             RecentCountryPhoneCode = 0;
             RecentAccountName = "yevgeny.sotnikov@gmail.com";
             RecentPassword = "drovoseg";
-            //NeedToRememberRecentPassword = true;
+            NeedToRememberRecentPassword = true;
         }
     }
 }

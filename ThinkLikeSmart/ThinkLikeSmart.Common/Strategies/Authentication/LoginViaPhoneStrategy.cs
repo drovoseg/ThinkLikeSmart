@@ -43,9 +43,6 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
 
             loginView.AccountName = !string.IsNullOrWhiteSpace(recentEmail) ? recentEmail : string.Empty;
 
-            //        recentPwd = SharedPreferencesManager.getInstance().getData(
-            //                mContext, SharedPreferencesManager.SP_FILE_GWELL,
-            //                SharedPreferencesManager.KEY_RECENTPASS);
             ushort recentCountryPhoneCode = settings.RecentCountryPhoneCode;
 
             if (recentCountryPhoneCode != 0)
@@ -72,24 +69,18 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
                 }
             }
 
-            //        if (SharedPreferencesManager.getInstance().getIsRememberPass(
-            //                mContext))
-            //        {
-            //            remember_pwd_img.setImageResource(R.drawable.ic_remember_pwd);
-            //            if (!recentPwd.equals(""))
-            //            {
-            //                mAccountPwd.setText(recentPwd);
-            //            }
-            //            else
-            //            {
-            //                mAccountPwd.setText("");
-            //            }
-            //        }
-            //        else
-            //        {
-            //            remember_pwd_img.setImageResource(R.drawable.ic_unremember_pwd);
-            //            mAccountPwd.setText("");
-            //        }
+            if (!settings.NeedToRememberRecentPassword)
+            {
+                loginView.RememberPasswordToggled = false;
+                loginView.Password = string.Empty;
+
+                return;
+            }
+
+            loginView.RememberPasswordToggled = true;
+
+            string recentPassword = settings.RecentPassword;
+            loginView.Password = string.IsNullOrWhiteSpace(recentPassword) ? string.Empty : recentPassword;
         }
 
         private void SetupCountryRelatedControls(ushort countryPhoneCode)
