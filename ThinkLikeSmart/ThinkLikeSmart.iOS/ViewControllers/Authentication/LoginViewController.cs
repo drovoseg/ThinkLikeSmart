@@ -213,38 +213,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
         //addObserver:self selector:@selector(onKeyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
         //    /*
-        //     *手机号登录时，设置国码和国名字
-        //     */
-        //    if(!self.countryCode||!self.countryCode.length>0){
-        //        NSString* language = [[NSLocale preferredLanguages] objectAtIndex:0];
-
-        //        if([language hasPrefix:@"zh"]){
-        //            self.countryCode = @"86";
-        //            self.countryName = NSLocalizedString(@"china", nil);
-        //        }else{
-        //            self.countryCode = @"1";
-        //            self.countryName = NSLocalizedString(@"america", nil);
-        //        }
-
-
-
-        //    }
-
-        //    /*
-        //     *将已经存在的注册ID显示在用户名区
-        //     */
-        //    if(self.lastRegisterId&&self.lastRegisterId.length>0){
-        //        self.usernameField1.text = self.lastRegisterId;
-        //    }
-
-        //    /*
-        //     *leftLabel显示国码
-        //     *rightLabel显示国家名字
-        //     */
-        //    self.leftLabel.text = [NSString stringWithFormat:@"+%@", self.countryCode];
-        //    self.rightLabel.text = self.countryName;
-
-        //    /*
         //     *没有理解？
         //     */
         //    if(self.isSessionIdError){
