@@ -72,32 +72,6 @@ namespace Tls.ThinkLikeSmart.Common.Strategies.Authentication
                 }
             }
 
-            //        else
-            //        {
-            //            if (getResources().getConfiguration().locale.getCountry()
-            //                    .equals("TW"))
-            //            {
-            //                default_count.setText("+886");
-            //                String name = SearchListActivity.getNameByCode(mContext,
-            //                        886);
-            //                default_name.setText(name);
-            //            }
-            //            else if (getResources().getConfiguration().locale
-            //                  .getCountry().equals("CN"))
-            //            {
-            //                default_count.setText("+86");
-            //                String name = SearchListActivity
-            //                        .getNameByCode(mContext, 86);
-            //                default_name.setText(name);
-            //            }
-            //            else
-            //            {
-            //                default_count.setText("+1");
-            //                String name = SearchListActivity.getNameByCode(mContext, 1);
-            //                default_name.setText(name);
-            //            }
-            //        }
-
             //        if (SharedPreferencesManager.getInstance().getIsRememberPass(
             //                mContext))
             //        {
