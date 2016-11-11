@@ -73,6 +73,78 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
             loginView.CountryContainerVisible = true;
             loginView.SetAccountNamePhoneHint();
         }
-    }
 
+        public void HandleLoginButtonClick()
+        {
+            if (string.IsNullOrWhiteSpace(loginView.AccountName))
+            {
+                loginView.ShowInvalidAccountNameToast();
+                return;
+            }
+
+            string accountName = loginView.AccountName.Trim();
+            string password = loginView.Password.Trim();
+
+            //		} else {
+            //			if ((mInputName == null || mInputName.equals(""))
+            //					&& (mInputPwd != null && !mInputPwd.equals(""))) {
+            //				T.showShort(mContext, R.string.input_account);
+            //			} else if ((mInputName != null && !mInputName.equals(""))
+            //					&& (mInputPwd == null || mInputPwd.equals(""))) {
+            //				T.showShort(mContext, R.string.input_password);
+            //			} else {
+            //				T.showShort(mContext, R.string.input_tip);
+            //			}
+            //		}
+
+        }
+        //        private void login()
+        //        {
+        //            mInputName = mAccountName.getText().toString().trim();
+        //            mInputPwd = mAccountPwd.getText().toString().trim();
+        //            if ((mInputName != null && !mInputName.equals(""))
+        //                    && (mInputPwd != null && !mInputPwd.equals("")))
+        //            {
+        //                if (null != dialog && dialog.isShowing())
+        //                {
+        //                    Log.e("my", "isShowing");
+        //                    return;
+        //                }
+        //                dialog = new NormalDialog(mContext);
+        //                dialog.setOnCancelListener(new OnCancelListener() {
+
+        //                @Override
+
+        //                public void onCancel(DialogInterface arg0)
+        //        {
+        //            // TODO Auto-generated method stub
+        //            isDialogCanel = true;
+        //        }
+
+        //    });
+        //			dialog.setTitle(mContext.getResources().getString(
+        //                    R.string.login_ing));
+        //			dialog.showLoadingDialog();
+        //			dialog.setCanceledOnTouchOutside(false);
+        //			isDialogCanel = false;
+
+        //			if (current_type == Constants.LoginType.PHONE) {
+        //				String name = default_count.getText().toString() + "-"
+        //                        + mInputName;
+        //    new LoginTask(name, mInputPwd).execute();
+        //} else {
+        //				if (Utils.isNumeric(mInputName)) {
+        //					if (mInputName.charAt(0) != '0') {
+        //						mHandler.sendEmptyMessage(ACCOUNT_NO_EXIST);
+        //						return;
+        //					}
+        //					new LoginTask(mInputName, mInputPwd).execute();
+        //				} else {
+        //					new LoginTask(mInputName, mInputPwd).execute();
+        //				}
+        //			}
+
+        //	}
+
+    }
 }

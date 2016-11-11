@@ -10,4 +10,6 @@
     <string name="login_title">Войти</string>
     <string name="register">Регистрация</string>
     <string name="forget_pwd"><u>Забыли пароль?</u></string>
+
+    <string name="input_account">Заполните поле Учетная запись</string>
 </resources>

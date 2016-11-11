@@ -6,6 +6,7 @@ using Tls.ThinkLikeSmart.Common.Presenters.Authentication;
 using Tls.ThinkLikeSmart.Common.Views.Authentication;
 using Tls.ThinkLikeSmart.iOS.Storage;
 using UIKit;
+using ToastIOS;
 
 namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 {
@@ -68,7 +69,7 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             base.ViewDidLoad();
 
             loginMethodSegmentedControl.ValueChanged += OnLoginMethodSegmentedControlValueChanged;
-
+            loginButton.TouchUpInside += OnLoginButtonTouchUpInside;
             // Perform any additional setup after loading the view, typically from a nib.
             presenter.ViewCreated();
         }
@@ -116,8 +117,13 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             }
             else presenter.HandlePhoneRadioButtonClick();
 
-            accountNameTextField.ResignFirstResponder();
-            passwordTextField.ResignFirstResponder();
+            HideKeyboard();
+        }
+
+        private void OnLoginButtonTouchUpInside(object sender, EventArgs e)
+        {
+            HideKeyboard();
+            presenter.HandleLoginButtonClick();
         }
 
         #endregion
@@ -144,7 +150,19 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             accountNameTextField.Placeholder = NSBundle.MainBundle.LocalizedString("input_email", "");
         }
 
+        public void ShowInvalidAccountNameToast()
+        {
+            Toast.MakeText(NSBundle.MainBundle.LocalizedString("unInputUsername", "")).Show();
+        }
+
         #endregion
+
+        private void HideKeyboard()
+        {
+            accountNameTextField.ResignFirstResponder();
+            passwordTextField.ResignFirstResponder();
+        }
+
 
         //# import "LoginController.h"
         //# import "Constants.h"
@@ -783,16 +801,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
 
         //-(void)onKeyBoardDown:(id)sender{
         //    [sender resignFirstResponder];
-        //}
-
-        //-(void)hideKeyBoard{//click login button to call
-        //    if(self.loginType==0){
-        //        [self.usernameField1 resignFirstResponder];
-        //        [self.passwrodField1 resignFirstResponder];
-        //    }else{
-        //        [self.usernameField2 resignFirstResponder];
-        //        [self.passwrodField2 resignFirstResponder];
-        //    }
         //}
 
         //-(void)onProgressAlertExit{

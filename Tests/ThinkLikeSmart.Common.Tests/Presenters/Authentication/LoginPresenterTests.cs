@@ -92,6 +92,21 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
             loginView.Received().ToggleEmailLoginType();
         }
 
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("   ")]
+        public void HandleLoginButtonClick_AccountNameIsNullOrWhitespace_ToastShouldBeShowed(string arrangedAccountName)
+        {
+            //Arrange
+            loginView.AccountName.Returns(arrangedAccountName);
+
+            //Act
+            loginPresenter.HandleLoginButtonClick();
+
+            //Assert
+            loginView.Received().ShowInvalidAccountNameToast();
+        }
+
         [TearDown]
         public void TearDown()
         {

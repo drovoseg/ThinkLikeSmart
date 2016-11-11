@@ -166,7 +166,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         private void OnLoginButtonClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            presenter.HandleLoginButtonClick();
         }
 
         private void OnCountryLayoutClick(object sender, EventArgs e)
@@ -205,10 +205,17 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
 
         public void SetAccountNamePhoneHint()
         {
+            //not implemented
         }
 
         public void SetAccountNameEmailHint()
         {
+            //not implemented
+        }
+
+        public void ShowInvalidAccountNameToast()
+        {
+            Toast.MakeText(this, Resource.String.input_account, ToastLength.Short).Show();
         }
 
         #endregion
@@ -276,22 +283,6 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         //            Intent i = new Intent(mContext, SearchListActivity.class);
 
         //            startActivity(i);
-        //			break;
-        //		case Resource.Id.type_phone:
-        //			type_phone.setChecked(true);
-        //			type_email.setChecked(false);
-        //			choose_country.setVisibility(RelativeLayout.VISIBLE);
-        //			current_type = Constants.LoginType.PHONE;
-
-        //            initRememberPass();
-        //			break;
-        //		case Resource.Id.type_email:
-        //			type_phone.setChecked(false);
-        //			type_email.setChecked(true);
-        //			choose_country.setVisibility(RelativeLayout.GONE);
-        //			current_type = Constants.LoginType.EMAIL;
-
-        //            initRememberPass();
         //			break;
         //		case Resource.Id.login:
 
@@ -477,64 +468,7 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
         //    this.finish();
         //}
 
-        //private void login()
-        //{
-        //    mInputName = mAccountName.getText().toString().trim();
-        //    mInputPwd = mAccountPwd.getText().toString().trim();
-        //    if ((mInputName != null && !mInputName.equals(""))
-        //            && (mInputPwd != null && !mInputPwd.equals("")))
-        //    {
-        //        if (null != dialog && dialog.isShowing())
-        //        {
-        //            Log.e("my", "isShowing");
-        //            return;
-        //        }
-        //        dialog = new NormalDialog(mContext);
-        //        dialog.setOnCancelListener(new OnCancelListener() {
 
-        //                @Override
-
-        //                public void onCancel(DialogInterface arg0)
-        //{
-        //    // TODO Auto-generated method stub
-        //    isDialogCanel = true;
-        //}
-
-        //			});
-        //			dialog.setTitle(mContext.getResources().getString(
-        //                    R.string.login_ing));
-        //			dialog.showLoadingDialog();
-        //			dialog.setCanceledOnTouchOutside(false);
-        //			isDialogCanel = false;
-
-        //			if (current_type == Constants.LoginType.PHONE) {
-        //				String name = default_count.getText().toString() + "-"
-        //                        + mInputName;
-        //new LoginTask(name, mInputPwd).execute();
-        //			} else {
-        //				if (Utils.isNumeric(mInputName)) {
-        //					if (mInputName.charAt(0) != '0') {
-        //						mHandler.sendEmptyMessage(ACCOUNT_NO_EXIST);
-        //						return;
-        //					}
-        //					new LoginTask(mInputName, mInputPwd).execute();
-        //				} else {
-        //					new LoginTask(mInputName, mInputPwd).execute();
-        //				}
-        //			}
-
-        //		} else {
-        //			if ((mInputName == null || mInputName.equals(""))
-        //					&& (mInputPwd != null && !mInputPwd.equals(""))) {
-        //				T.showShort(mContext, R.string.input_account);
-        //			} else if ((mInputName != null && !mInputName.equals(""))
-        //					&& (mInputPwd == null || mInputPwd.equals(""))) {
-        //				T.showShort(mContext, R.string.input_password);
-        //			} else {
-        //				T.showShort(mContext, R.string.input_tip);
-        //			}
-        //		}
-        //	}
 
         //	class LoginTask extends AsyncTask
         //{

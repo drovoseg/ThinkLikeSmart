@@ -21,5 +21,7 @@
         void SetAccountNamePhoneHint();
 
         void SetAccountNameEmailHint();
+
+        void ShowInvalidAccountNameToast();
     }
 }

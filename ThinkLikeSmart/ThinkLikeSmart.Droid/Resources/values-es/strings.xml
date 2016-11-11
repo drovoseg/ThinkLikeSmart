@@ -9,4 +9,6 @@
     <string name="login_title">login</string>
     <string name="register">registrar</string>
     <string name="forget_pwd"><u>olvidar tu clave</u></string>
+
+    <string name="input_account">rellene la cuenta</string>
 </resources>

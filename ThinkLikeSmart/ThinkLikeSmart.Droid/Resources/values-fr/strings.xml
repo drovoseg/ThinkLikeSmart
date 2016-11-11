@@ -10,4 +10,6 @@
     <string name="login_title">enregistrer </string>
     <string name="register">inscrire </string>
     <string name="forget_pwd"><u>mot de passe oublié?</u></string>
+    
+    <string name="input_account">remplissez le compte!</string>
 </resources>

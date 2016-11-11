@@ -10,4 +10,6 @@
     <string name="login_title">登录</string>
     <string name="register">新用户注册</string>
     <string name="forget_pwd"><u>忘记密码?</u></string>
+
+    <string name="input_account">账户不能为空！</string>
 </resources>

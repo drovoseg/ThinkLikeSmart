@@ -11,4 +11,6 @@
     <string name="login_title">Login</string>
     <string name="register">register</string>
     <string name="forget_pwd"><u>Forget your password?</u></string>
+
+    <string name="input_account">Please fill the Account!</string>
 </resources>

@@ -10,4 +10,6 @@
     <string name="login_title">로그인</string>
     <string name="register">등록</string>
     <string name="forget_pwd"><u>비밀번호를 잊어셨나요?</u></string>
+
+    <string name="input_account">계정을 입력하세요!</string>
 </resources>
