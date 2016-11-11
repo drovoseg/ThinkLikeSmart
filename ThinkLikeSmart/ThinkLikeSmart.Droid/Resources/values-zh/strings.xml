@@ -12,4 +12,5 @@
     <string name="forget_pwd"><u>忘記密碼?</u></string>
 
     <string name="input_account">賬戶不能為空！</string>
+    <string name="input_password">密碼不能為空！</string>
 </resources>

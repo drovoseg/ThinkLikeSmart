@@ -23,5 +23,7 @@
         void SetAccountNameEmailHint();
 
         void ShowInvalidAccountNameToast();
+
+        void ShowInvalidPasswordToast();
     }
 }

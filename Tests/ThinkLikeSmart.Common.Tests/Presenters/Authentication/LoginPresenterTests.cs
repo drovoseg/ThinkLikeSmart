@@ -99,12 +99,29 @@ namespace ThinkLikeSmart.Common.Tests.Presenters.Authentication
         {
             //Arrange
             loginView.AccountName.Returns(arrangedAccountName);
+            loginView.Password.Returns("some password");
 
             //Act
             loginPresenter.HandleLoginButtonClick();
 
             //Assert
             loginView.Received().ShowInvalidAccountNameToast();
+        }
+
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("   ")]
+        public void HandleLoginButtonClick_PasswordIsNullOrWhitespace_ToastShouldBeShowed(string arrangedAccountName)
+        {
+            //Arrange
+            loginView.AccountName.Returns("some account name");
+            loginView.Password.Returns(arrangedAccountName);
+
+            //Act
+            loginPresenter.HandleLoginButtonClick();
+
+            //Assert
+            loginView.Received().ShowInvalidPasswordToast();
         }
 
         [TearDown]

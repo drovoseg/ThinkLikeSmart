@@ -155,6 +155,11 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             Toast.MakeText(NSBundle.MainBundle.LocalizedString("unInputUsername", "")).Show();
         }
 
+        public void ShowInvalidPasswordToast()
+        {
+            Toast.MakeText(NSBundle.MainBundle.LocalizedString("unInputPassword", "")).Show();
+        }
+
         #endregion
 
         private void HideKeyboard()
@@ -162,7 +167,6 @@ namespace Tls.ThinkLikeSmart.iOS.ViewControllers.Authentication
             accountNameTextField.ResignFirstResponder();
             passwordTextField.ResignFirstResponder();
         }
-
 
         //# import "LoginController.h"
         //# import "Constants.h"

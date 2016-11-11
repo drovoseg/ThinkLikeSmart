@@ -12,4 +12,5 @@
     <string name="forget_pwd"><u>忘记密码?</u></string>
 
     <string name="input_account">账户不能为空！</string>
+    <string name="input_password">密码不能为空！</string>
 </resources>

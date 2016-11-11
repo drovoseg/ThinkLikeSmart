@@ -13,4 +13,5 @@
     <string name="forget_pwd"><u>Forget your password?</u></string>
 
     <string name="input_account">Please fill the Account!</string>
+    <string name="input_password">Please fill the Password!</string>
 </resources>

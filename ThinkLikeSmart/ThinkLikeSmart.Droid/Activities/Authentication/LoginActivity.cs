@@ -218,6 +218,11 @@ namespace Tls.ThinkLikeSmart.Droid.Activities.Authentication
             Toast.MakeText(this, Resource.String.input_account, ToastLength.Short).Show();
         }
 
+        public void ShowInvalidPasswordToast()
+        {
+            Toast.MakeText(this, Resource.String.input_password, ToastLength.Short).Show();
+        }
+
         #endregion
 
         //public void regFilter()

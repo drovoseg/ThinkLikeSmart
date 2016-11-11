@@ -82,20 +82,14 @@ namespace Tls.ThinkLikeSmart.Common.Presenters.Authentication
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(loginView.Password))
+            {
+                loginView.ShowInvalidPasswordToast();
+                return;
+            }
+
             string accountName = loginView.AccountName.Trim();
             string password = loginView.Password.Trim();
-
-            //		} else {
-            //			if ((mInputName == null || mInputName.equals(""))
-            //					&& (mInputPwd != null && !mInputPwd.equals(""))) {
-            //				T.showShort(mContext, R.string.input_account);
-            //			} else if ((mInputName != null && !mInputName.equals(""))
-            //					&& (mInputPwd == null || mInputPwd.equals(""))) {
-            //				T.showShort(mContext, R.string.input_password);
-            //			} else {
-            //				T.showShort(mContext, R.string.input_tip);
-            //			}
-            //		}
 
         }
         //        private void login()
